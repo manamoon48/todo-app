@@ -1,0 +1,17 @@
+/* 全体フォントをiOS標準のモダンなゴシック体に統一 */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Helvetica Neue", Arial, sans-serif;
+  -webkit-font-smoothing: antialiased; /* 文字の描写をくっきりさせる */
+}
+
+/* タイトルやリスト名の文字を太く＆色を濃く設定 */
+.list-title, h1, h2, h3 {
+  font-weight: 600; /* 太文字に指定 */
+  color: #1c1c1e;   /* はっきりした濃いグレー/黒 */
+}
+
+/* サブテキスト（「2個未完了/4個」など）の視認性をアップ */
+.list-subtitle, .sub-text {
+  font-weight: 500;
+  color: #636366;   /* 薄すぎないグレーに微調整 */
+}
