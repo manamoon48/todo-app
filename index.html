@@ -148,7 +148,7 @@ html, body {
 }
 
 #detailMain {
-  padding-bottom: 140px;
+  padding-bottom: 164px;
 }
 
 /* ===== List View ===== */
@@ -402,18 +402,11 @@ html, body {
 .todo-delete-btn {
   border: none;
   background: none;
-  color: var(--danger);
+  color: #c7c7cc;
   font-size: 20px;
   cursor: pointer;
   padding: 4px;
-  opacity: 0;
-  transition: opacity 0.15s;
   flex-shrink: 0;
-}
-
-.todo-item:hover .todo-delete-btn,
-.todo-item.swipe-mode .todo-delete-btn {
-  opacity: 1;
 }
 
 /* ===== Bottom Bar (filter + add item) ===== */
@@ -426,12 +419,12 @@ html, body {
   max-width: 600px;
   background: var(--card);
   border-top: 0.5px solid var(--border);
-  padding-bottom: var(--safe-bottom);
+  padding-bottom: calc(var(--safe-bottom) + 24px);
   z-index: 100;
 }
 
 .bottom-bar .segmented {
-  margin: 8px 16px 0;
+  margin: 0 16px 8px;
 }
 
 /* ===== Add Item Bar ===== */
@@ -750,15 +743,15 @@ style="margin-bottom:0;"></div>
 
   <!-- ===== Bottom Bar (detail view) ===== -->
   <div class="bottom-bar" id="bottomBar" style="display:none">
-    <div class="segmented" id="segmentedControl">
-      <button class="active" data-filter="all">すべて</button>
-      <button data-filter="active">未完了</button>
-      <button data-filter="completed">完了</button>
-    </div>
     <div class="add-bar">
       <input type="text" id="newItemInput" placeholder="アイテムを入力..."
 autocomplete="off">
       <button class="add-btn" id="addBtn">+</button>
+    </div>
+    <div class="segmented" id="segmentedControl">
+      <button class="active" data-filter="all">すべて</button>
+      <button data-filter="active">未完了</button>
+      <button data-filter="completed">完了</button>
     </div>
   </div>
 </div>
