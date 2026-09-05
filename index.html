@@ -1230,7 +1230,22 @@ detailMain.addEventListener('click', e => {
     if (item) {
       item.completed = !item.completed;
       saveData();
-      renderDetailView();
+
+      if (item.completed) {
+        // Show the checked state immediately, then re-render (which
+        // reorders/moves the item) after a short delay so the user
+        // can actually see the check happen before it moves away.
+        checkbox.classList.add('checked');
+        const textEl = checkbox.closest('.todo-item')?.querySelector('.todo-text');
+        if (textEl) textEl.classList.add('completed');
+
+        setTimeout(() => {
+          renderDetailView();
+        }, 500);
+      } else {
+        // Unchecking should feel instant.
+        renderDetailView();
+      }
     }
     return;
   }
